@@ -42,9 +42,9 @@ x = list()
 y = list()
 
 #Reading data from excel sheet and putting them into arrays
-for i in range(5):
+for i in range(cycles):
     col = numbers_to_alph(i)
-    for j in range(8):
+    for j in range(msmt):
         dist = (j+1)*2
         pos = col + str(j+1)
         y.append(sheet[pos].value)
@@ -78,11 +78,11 @@ for i in x_div_2:
     j = theta[0] * np.log10(i) + theta[1]
     y_line.append(j)
 
-print("length of y_line is", len(y_line), "\ny_line = ", y_line[0:8])
+print("length of y_line is", len(y_line), "\ny_line = ", y_line[0:msmt])
 
 # Function to plot
 plt.scatter(x, y, color="steelblue")
-plt.plot(x[0:8], y_line[0:8], color="red")
+plt.plot(x[0:msmt], y_line[0:msmt], color="red")
 
 # function to show the plot 
 plt.show()
