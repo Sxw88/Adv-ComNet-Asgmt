@@ -58,7 +58,7 @@ plt.ylabel("Path Loss (dB)")
 # Calculating parameters (theta0, theta1)
 # of the log curve using the numpy.polyfit() function
 x_div_2 = [i / 2 for i in x]
-theta = np.polyfit(np.log10(x_div_2), y, 1)
+theta = np.polyfit(np.log10(x), y, 1)
 
 print(f'The parameters of the curve: {theta}')
 print(f'Best fit Log curve equation: Y = ', theta[0], 'log X + ', theta[1])
@@ -66,7 +66,7 @@ print(f'Best fit Log curve equation: Y = ', theta[0], 'log X + ', theta[1])
 # Now, calculating the y-axis values against x-values according to
 # the parameters theta0, theta1 and theta2
 #y_line = theta[2] + theta[1] * pow(np.array(x), 1) + theta[0] * pow(np.array(x), 2)
-y_line = theta[0] * np.log10(x_div_2) + theta[1]
+y_line = theta[0] * np.log10(x) + theta[1]
 
 # Function to plot 
 plt.scatter(x, y, color="steelblue")
