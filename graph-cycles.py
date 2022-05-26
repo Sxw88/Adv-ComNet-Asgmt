@@ -96,8 +96,10 @@ for i in top_list:
     theta.append(np.polyfit(np.log10(first_item_in_sublist(i,0)), first_item_in_sublist(i,1), 1))
 
 for i in range(cycles):
+    print("-------------------------------------------------------------------------------------")
     print(f'The parameters of the curve: {theta[i]}')
-    print(f'Best fit Log curve equation: Y = ', theta[i][0], 'log X + ', theta[i][1])
+    print(f'Best fit Log curve equation: Y = ', theta[i][0], 'log X + ', theta[i][1], "\n")
+print("-----------------------------------------------------------------------------------------")
 
 # Now, calculating the y-axis values against x-values according to
 # the parameters theta0, theta1
